@@ -27,5 +27,7 @@ USER jovyan
 
 # install default kale package
 RUN git clone https://github.com/Jupyter-Kale/kale
-RUN cd kale && git checkout 83398b1 && pip install .
-RUN cp -R /home/jovyan/kale/examples /home/jovyan/work/examples
+RUN cd kale && git remote add oliver https://github.com/OliverEvans96/kale
+RUN cd kale && git remote add matt https://github.com/mlhenderson/jupyter_hpc
+RUN cd kale && git checkout 83398b1 && pip install -e .
+RUN ln -s /home/jovyan/kale/examples /home/jovyan/work/examples

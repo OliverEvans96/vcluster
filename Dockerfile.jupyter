@@ -26,8 +26,5 @@ COPY fireworks/my_launchpad.yaml /opt/conda/lib/python3.6/site-packages/my_launc
 USER jovyan
 
 # install default kale package
-RUN git clone https://github.com/Jupyter-Kale/kale
-RUN cd kale && git remote add oliver https://github.com/OliverEvans96/kale
-RUN cd kale && git remote add matt https://github.com/mlhenderson/jupyter_hpc
-RUN cd kale && git checkout 83398b1 && pip install -e .
-RUN ln -s /home/jovyan/kale/examples /home/jovyan/work/examples
+COPY jupyter/init_kale.sh /usr/local/bin/init_kale.sh
+RUN /usr/local/bin/init_kale.sh

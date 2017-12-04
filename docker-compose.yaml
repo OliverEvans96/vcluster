@@ -78,7 +78,6 @@ services:
         volumes:
             - ./scratch:/tmp/scratch
             - ./notebooks:/home/jovyan/work
-            - ${KALE_SRC}:/opt/kale
         ports:
             - "18888:8888"
         depends_on:

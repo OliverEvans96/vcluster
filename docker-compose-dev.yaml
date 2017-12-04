@@ -1,0 +1,7 @@
+version: "2.3"
+services:
+    jupyter:
+        volumes:
+            - ${KALE_SRC}:/home/jovyan/kale
+                
+                

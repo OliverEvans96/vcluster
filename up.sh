@@ -22,6 +22,6 @@ then
 fi
 
 # Run
-compose_cmd="${compose_cmd} up"
-$compose_cmd
+$compose_cmd build
+$compose_cmd up
 	

@@ -32,5 +32,8 @@ RUN cd kale && git remote add oliver https://github.com/OliverEvans96/kale
 RUN cd kale && git remote add matt https://github.com/mlhenderson/jupyter_hpc
 # Checkout specific version
 RUN cd kale && git checkout 83398b1
-RUN cd kale && pip install -e . 
+
+# Copy jupyter launch script
+# (calls pip install -e /home/jovyan/kale before running jupyter)
+COPY jupyter/launch.sh /usr/local/bin/launch.sh
 

@@ -78,6 +78,8 @@ services:
         volumes:
             - ./scratch:/tmp/scratch
             - ./notebooks:/home/jovyan/work
+        command:
+            - /usr/local/bin/launch.sh
         ports:
             - "18888:8888"
         depends_on:
